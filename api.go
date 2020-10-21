@@ -139,6 +139,9 @@ func (q DNSQuestion) validate() error {
 	if err != nil {
 		return err
 	}
+	if matcher == nil {
+		return errors.New("Init() was not called!")
+	}
 	matched := matcher.MatchString(ascii)
 	if !matched {
 		return errors.New(fmt.Sprintf("did not match %s", ascii))
