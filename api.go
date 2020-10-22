@@ -37,23 +37,18 @@ func Init() (err error) {
 	00 00 - Number of additional records
 */
 
-func b2i(b bool) int {
-	if b {
-		return 1
-	}
-	return 0
-}
-
 type DNSQuery struct {
 	ID     uint16 // An arbitrary 16 bit request identifier (same id is used in the response)
 	QR     bool   // A 1 bit flat specifying whether this message is a query (0) or a response (1)
 	Opcode uint8  // A 4 bit fields that specifies the query type; 0 (standard), 1 (inverse), 2 (status), 4 (notify), 5 (update)
 
-	AA           bool  // Authoritative answer
-	TC           bool  // 1 bit flag specifying if the message has been truncated
-	RD           bool  // 1 bit flag to specify if recursion is desired (if the DNS server we secnd out request to doesn't know the answer to our query, it can recursively ask other DNS servers)
-	RA           bool  // Recursive available
-	Z            uint8 // Reserved for future use
+	AA           bool // Authoritative answer
+	TC           bool // 1 bit flag specifying if the message has been truncated
+	RD           bool // 1 bit flag to specify if recursion is desired (if the DNS server we secnd out request to doesn't know the answer to our query, it can recursively ask other DNS servers)
+	RA           bool // Recursive available
+	Z            bool // Reserved for future use
+	AD           bool
+	CD           bool
 	ResponseCode uint8
 
 	QDCount uint16 // Number of entries in the question section
@@ -62,6 +57,87 @@ type DNSQuery struct {
 	ARCount uint16 // Number of additional records
 
 	Questions []DNSQuestion
+}
+
+func DecodeDNSQuery(payload []byte) (DNSQuery, error) {
+	buf := bytes.NewReader(payload)
+	var (
+		ID           uint16
+		secondRow    uint16
+		QR           bool
+		Opcode       uint8
+		AA           bool // Authoritative answer
+		TC           bool // 1 bit flag specifying if the message has been truncated
+		RD           bool // 1 bit flag to specify if recursion is desired (if the DNS server we secnd out request to doesn't know the answer to our query, it can recursively ask other DNS servers)
+		RA           bool // Recursive available
+		Z            bool // Reserved for future use
+		AD           bool
+		CD           bool
+		ResponseCode uint8
+
+		QDCount uint16 // Number of entries in the question section
+		ANCount uint16 // Number of answers
+		NSCount uint16 // Number of authorities
+		ARCount uint16 // Number of additional records
+
+	)
+
+	err := binary.Read(buf, binary.BigEndian, &ID)
+	if err != nil {
+		return DNSQuery{}, err
+	}
+
+	err = binary.Read(buf, binary.BigEndian, &secondRow)
+	if err != nil {
+		return DNSQuery{}, err
+	}
+	QR = readQRBit(secondRow)
+	Opcode = readOpcode(secondRow)
+	AA = readAABit(secondRow)
+	TC = readTCBit(secondRow)
+	RD = readRDBit(secondRow)
+	RA = readRABit(secondRow)
+	Z = readZBit(secondRow)
+	AD = readADBit(secondRow)
+	CD = readCDBit(secondRow)
+	ResponseCode = readRCode(secondRow)
+
+	err = binary.Read(buf, binary.BigEndian, &QDCount)
+	if err != nil {
+		return DNSQuery{}, err
+	}
+	err = binary.Read(buf, binary.BigEndian, &ANCount)
+	if err != nil {
+		return DNSQuery{}, err
+	}
+	err = binary.Read(buf, binary.BigEndian, &NSCount)
+	if err != nil {
+		return DNSQuery{}, err
+	}
+	err = binary.Read(buf, binary.BigEndian, &ARCount)
+	if err != nil {
+		return DNSQuery{}, err
+	}
+
+	return DNSQuery{
+		ID:           ID,
+		QR:           QR,
+		Opcode:       Opcode,
+		AA:           AA,
+		TC:           TC,
+		RD:           RD,
+		RA:           RA,
+		Z:            Z,
+		AD:           AD,
+		CD:           CD,
+		ResponseCode: ResponseCode,
+		QDCount:      QDCount,
+		ANCount:      ANCount,
+		NSCount:      NSCount,
+		ARCount:      ARCount,
+		//TODO: add Question parsing..
+		Questions: nil,
+	}, nil
 }
 
 func (q DNSQuery) Encode() ([]byte, error) {
@@ -76,7 +152,7 @@ func (q DNSQuery) Encode() ([]byte, error) {
 	}
 
 	queryParams1 := byte(b2i(q.QR)<<7 | int(q.Opcode)<<3 | b2i(q.AA)<<1 | b2i(q.RD))
-	queryParams2 := byte(b2i(q.RA)<<7 | int(q.Z)<<4)
+	queryParams2 := byte(b2i(q.RA)<<7 | b2i(q.Z)<<4)
 
 	err = binary.Write(&buffer, binary.BigEndian, queryParams1)
 	if err != nil {
