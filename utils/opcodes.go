@@ -1,4 +1,4 @@
-package libdns
+package utils
 
 /*
    New OpCode assignments require an IETF Standards Action.

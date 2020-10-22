@@ -1,4 +1,4 @@
-package libdns
+package utils
 
 func FormatErrorCode(err int) string {
 	switch err {
