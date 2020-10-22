@@ -18,8 +18,8 @@ func TestNoInit(t *testing.T) {
 	}
 }
 
-func TestDecodeDNSQuery(t *testing.T) {
-	toDecode := []byte{
+func TestDecodeQuery(t *testing.T) {
+	rawQuery := []byte{
 		0b11111111, 0b11111111,
 		//1:QR|4:Opcode|1:AA|1:TC|1:RD|1:RA|1:Z|1:AD|1:CD|4:RCODE
 		0b00000000, 0b00111111,
@@ -29,7 +29,7 @@ func TestDecodeDNSQuery(t *testing.T) {
 		0b11111111, 0b11111111,
 	}
 
-	dnsQuery, err := DecodeQuery(toDecode)
+	dnsQuery, err := DecodeQuery(rawQuery)
 	if err != nil {
 		t.Fatal(err)
 	}
