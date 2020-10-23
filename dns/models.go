@@ -208,8 +208,8 @@ func (q Query) Encode() ([]byte, error) {
 
 type Question struct {
 	Domain string
-	Type   uint16 // DNS Record type we are looking up; 1 (A record), 2 (authoritive name server)
-	Class  uint16 // 1 (internet)
+	Type   uint16 // DNS Record type; look into utils.A, utils.NS, etc.
+	Class  uint16 // DNS Class; look into
 }
 
 func (q Question) validate() error {
