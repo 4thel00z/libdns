@@ -6,7 +6,6 @@ func ReadBoolFromUint16(row uint16, shift int) bool {
 
 func ReadQRBit(row uint16) bool {
 	return ReadBoolFromUint16(row, 15)
-
 }
 
 func ReadOpcode(row uint16) uint8 {
