@@ -152,8 +152,10 @@ func (q Query) Encode() ([]byte, error) {
 		return nil, err
 	}
 
+	//QR|   Opcode  |AA|TC|RD|
 	queryParams1 := byte(utils.B2i(q.QR)<<7 | int(q.Opcode)<<3 | utils.B2i(q.AA)<<1 | utils.B2i(q.RD))
-	queryParams2 := byte(utils.B2i(q.RA)<<7 | utils.B2i(q.Z)<<4)
+	//RA| Z|AD|CD|   RCODE   |
+	queryParams2 := byte(utils.B2i(q.RA)<<7 | utils.B2i(q.Z)<<6 | utils.B2i(q.AD)<<5 | utils.B2i(q.CD)<<4 | int(q.ResponseCode&0b00001111))
 
 	err = binary.Write(&buffer, binary.BigEndian, queryParams1)
 	if err != nil {
