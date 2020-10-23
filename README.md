@@ -1,6 +1,6 @@
 # libdns
 
-![libdns-tests](https://github.com/4thel00z/libdns/workflows/.github/workflows/run_go_tests.yml/badge.svg)
+![libdns-tests](https://github.com/4thel00z/libdns/workflows/Test/badge.svg)
 
 
 Library to query DNS servers while packing the DNS query manually.
