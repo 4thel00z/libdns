@@ -91,3 +91,20 @@ func TestDecodeQuery(t *testing.T) {
 	assert.Equal(t, expected, query)
 
 }
+
+func TestDecodeQuestion(t *testing.T) {
+	err := Init()
+	if err != nil {
+		t.Fatal(err)
+	}
+	question := Question{Domain: "ransomware.host", Type: 0x1, Class: 0x1}
+	encoded, err := question.encode()
+	if err != nil {
+		t.Fatal(err)
+	}
+	decoded, err := DecodeQuestion(encoded)
+	if err != nil {
+		t.Fatal(err)
+	}
+	assert.Equal(t, question, decoded)
+}
