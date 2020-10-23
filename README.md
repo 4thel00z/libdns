@@ -9,8 +9,9 @@ Library to query DNS servers while packing the DNS query manually.
 
 * Add parsing the response portion ☑
 * Add tests ☑
-* Add high-level API ☐
+* Add dns record constants ☑
 * Add question parsing  ☑
+* Add high-level API ☐
 * Add documentation ☐
 * Add examples ☐
 
