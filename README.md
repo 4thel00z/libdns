@@ -7,8 +7,12 @@ Library to query DNS servers while packing the DNS query manually.
 
 ## Todo
 
-* Add parsing the response portion ☐
-* Add tests ☐
+* Add parsing the response portion ☑
+* Add tests ☑
+* Add high-level API ☐
+* Add question parsing ☐
+* Add documentation ☐
+* Add examples ☐
 
 ## Acknowledgements
 
