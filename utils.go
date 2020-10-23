@@ -4,6 +4,9 @@ import (
 	"fmt"
 )
 
+func PrintlnUint8WithZeroPad(value uint8) {
+	fmt.Printf("%08b\n", value)
+}
 func PrintlnUint16WithZeroPad(value uint16) {
 	fmt.Printf("%016b\n", value)
 }
