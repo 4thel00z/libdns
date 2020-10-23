@@ -229,6 +229,43 @@ func (q Question) validate() error {
 	return nil
 }
 
+func DecodeQuestion(raw []byte) (Question, error) {
+	var (
+		q           = Question{}
+		length      byte
+		reader      io.Reader = bytes.NewReader(raw)
+		domainParts           = []string{}
+	)
+
+	for {
+		err := binary.Read(reader, binary.BigEndian, &length)
+		if length == 0x0 {
+			// Consumed the null byte
+			break
+		}
+		if err == io.EOF {
+			return Question{}, fmt.Errorf("unexpected EOF while decoding questions: %s %e", raw, err)
+		}
+		chars := make([]uint8, length)
+		err = binary.Read(reader, binary.BigEndian, &chars)
+		if err != nil {
+			return Question{}, err
+		}
+		domainParts = append(domainParts, string(chars))
+	}
+
+	err := binary.Read(reader, binary.BigEndian, &q.Type)
+	if err != nil {
+		return Question{}, err
+	}
+	err = binary.Read(reader, binary.BigEndian, &q.Class)
+	if err != nil {
+		return Question{}, err
+	}
+	q.Domain = strings.Join(domainParts, ".")
+	return q, nil
+}
+
 func (q Question) encode() ([]byte, error) {
 	var buffer bytes.Buffer
 	err := q.validate()
