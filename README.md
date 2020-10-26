@@ -18,17 +18,18 @@ Library to query DNS servers while packing the DNS query manually.
 ## Example usage
 
 This demonstrates how you can make a simple DNS query. 
-```
+
+```go
 package main
 
 import (
 	"fmt"
-	"github.com/4thel00z/libdns"
-	"github.com/4thel00z/libdns/utils"
+	l "github.com/4thel00z/libdns"
+	u "github.com/4thel00z/libdns/utils"
 )
 
 func main() {
-	response, err := libdns.SimpleQueryOnce(utils.CloudflarePrimary, "ransomware.host", utils.A, utils.InternetClass, 10)
+	response, err := l.SimpleQueryOnce(u.CloudflarePrimary, "ransomware.host", u.A, u.InternetClass, 10)
 	if err != nil {
 		panic(err)
 	}
