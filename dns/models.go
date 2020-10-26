@@ -12,6 +12,7 @@ import (
 	"strings"
 )
 
+type Response Query
 type Query struct {
 	ID     uint16 // An arbitrary 16 bit request identifier (same id is used in the response)
 	QR     bool   // A 1 bit flat specifying whether this message is a query (0) or a response (1)
@@ -42,7 +43,7 @@ var matcher *regexp.Regexp
 var calledInit bool
 
 func Init() (err error) {
-	if calledInit{
+	if calledInit {
 		return nil
 	}
 	matcher, err = regexp.Compile(DomainPattern)
@@ -306,6 +307,15 @@ func (q Question) encode() ([]byte, error) {
 }
 func (q Question) Write(writer io.Writer) (int, error) {
 	payload, err := q.encode()
+	if err != nil {
+		return -1, err
+	}
+
+	return writer.Write(payload)
+}
+
+func (q Query) Write(writer io.Writer) (int, error) {
+	payload, err := q.Encode()
 	if err != nil {
 		return -1, err
 	}
