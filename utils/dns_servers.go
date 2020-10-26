@@ -3,14 +3,19 @@ package utils
 import (
 	"fmt"
 	"net"
+	"time"
 )
 
 type DNSServer string
 
-func (d DNSServer) ToConnection() (net.Conn, error) {
+func (d DNSServer) ToConnection(deadline int64) (net.Conn, error) {
 	conn, err := net.Dial("udp", fmt.Sprintf("%s:53", string(d)))
 	if err != nil {
 		return nil, err
+	}
+	if err := conn.SetDeadline(time.Now().Add(time.Duration(deadline) * time.Second)); err != nil {
+		return conn, nil
+
 	}
 	return conn, nil
 }

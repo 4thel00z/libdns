@@ -51,7 +51,7 @@ func TestToConnection(t *testing.T) {
 }
 
 func testDNSServer(t *testing.T, d DNSServer) {
-	connection, err := d.ToConnection()
+	connection, err := d.ToConnection(10)
 	assert.Nil(t, err)
 	defer connection.Close()
 }
