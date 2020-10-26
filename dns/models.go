@@ -42,6 +42,9 @@ var matcher *regexp.Regexp
 var calledInit bool
 
 func Init() (err error) {
+	if calledInit{
+		return nil
+	}
 	matcher, err = regexp.Compile(DomainPattern)
 	if err != nil {
 		return err
