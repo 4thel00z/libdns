@@ -3,17 +3,14 @@
 ![libdns-tests](https://github.com/4thel00z/libdns/workflows/Test/badge.svg)
 
 
-Library to query DNS servers while packing the DNS query manually.
+Go DNS Library that exposes various DNS primitives to the user such as:
 
-## Todo
+- DNS Servers
+- Models for the DNS format
+- Various DNS constants
+- etc.
 
-* Add parsing the response portion ☑
-* Add tests ☑
-* Add dns record constants ☑
-* Add question parsing  ☑
-* Add high-level API (first high-level API added) ☐
-* Add documentation ☐
-* Add examples ☐
+Besides that it sports a high-level API to enable simple programs that want to query DNS servers and not bother with the nitty-gritty.
 
 ## Example usage
 
@@ -37,7 +34,16 @@ func main() {
 }
 ```
 
+## Todo
+
+* Add parsing the response portion ☑
+* Add tests ☑
+* Add dns record constants ☑
+* Add question parsing  ☑
+* Add high-level API (first high-level API added) ☐
+* Add documentation ☐
+* Add examples ☐
+
 ## Acknowledgements
 
-This project has drawn inspiration from [go-dnsquery](https://github.com/vishen/go-dnsquery/) and improves
-on the sending portion.
+This project has drawn inspiration from [go-dnsquery](https://github.com/vishen/go-dnsquery/).
