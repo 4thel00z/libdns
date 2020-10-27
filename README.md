@@ -48,3 +48,7 @@ func main() {
 ## Acknowledgements
 
 This project has drawn inspiration from [go-dnsquery](https://github.com/vishen/go-dnsquery/).
+
+## License
+
+This project is licensed under the GPL-3 license.
