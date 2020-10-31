@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="1200.000000pt"
+   height="854.000000pt"
+   viewBox="0 0 1200.000000 854.000000"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg24"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <defs
+     id="defs28" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1329"
+     id="namedview26"
+     showgrid="false"
+     inkscape:zoom="0.58621967"
+     inkscape:cx="391.29918"
+     inkscape:cy="627.70094"
+     inkscape:window-x="0"
+     inkscape:window-y="55"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g22" />
+  <metadata
+     id="metadata2">
+Created by github.com/4thel00z
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <g
+     transform="translate(0.000000,854.000000) scale(0.100000,-0.100000)"
+     fill="#000000"
+     stroke="none"
+     id="g22">
+    <path
+       d="M5280 4320 l0 -500 40 0 40 0 0 500 0 500 -40 0 -40 0 0 -500z"
+       id="path4" />
+    <path
+       d="M5580 4760 l0 -60 45 0 45 0 0 60 0 60 -45 0 -45 0 0 -60z"
+       id="path6" />
+    <path
+       d="M5900 4320 l0 -500 40 0 40 0 0 62 0 61 29 -40 c19 -27 51 -51 92 -72 52 -26 74 -31 133 -31 89 0 132 12 192 53 92 62 143 206 131 367 -10 131 -61 230 -146 288 -118 80 -310 59 -400 -44 l-31 -35 0 196 0 195 -40 0 -40 0 0 -500z m409 148 c93 -29 152 -130 159 -275 10 -203 -78 -317 -243 -318 -58 0 -78 4 -116 27 -89 53 -135 160 -127 304 11 205 149 316 327 262z"
+       id="path8" />
+    <path
+       d="M7300 4625 l0 -196 -31 35 c-17 19 -56 48 -87 63 -49 24 -69 28 -142 28 -64 -1 -96 -6 -131 -22 -130 -59 -199 -207 -186 -401 13 -211 111 -321 293 -330 47 -3 96 1 117 7 52 18 123 68 146 104 l21 32 0 -62 0 -63 40 0 40 0 0 500 0 500 -40 0 -40 0 0 -195z m-142 -167 c132 -62 183 -290 102 -454 -53 -108 -147 -151 -268 -124 -74 16 -143 83 -166 161 -23 76 -21 206 4 276 51 145 191 205 328 141z"
+       id="path10" />
+    <path
+       d="M7829 4545 c-26 -8 -69 -35 -98 -61 l-51 -46 0 51 0 51 -40 0 -40 0 0 -360 0 -360 40 0 40 0 0 228 c0 248 7 295 54 356 71 93 237 106 313 24 37 -40 43 -91 43 -355 l0 -253 40 0 40 0 0 273 c0 159 -4 288 -11 310 -13 47 -61 102 -111 128 -53 27 -158 34 -219 14z"
+       id="path12" />
+    <path
+       d="M8525 4551 c-69 -17 -134 -69 -154 -124 -15 -40 -14 -123 3 -155 34 -64 80 -89 241 -127 59 -14 123 -32 142 -41 86 -41 81 -162 -9 -211 -49 -26 -181 -25 -228 3 -39 23 -79 76 -87 117 -5 25 -9 27 -50 27 l-45 0 7 -37 c14 -76 60 -139 130 -176 34 -19 56 -22 150 -22 101 0 115 2 168 28 159 79 154 284 -8 347 -17 7 -78 25 -137 41 -125 33 -161 50 -185 85 -20 31 -19 88 3 121 47 72 235 74 299 3 9 -10 23 -36 30 -57 12 -35 16 -38 55 -41 l42 -3 -7 33 c-26 130 -126 200 -280 197 -27 -1 -63 -4 -80 -8z"
+       id="path14" />
+    <path
+       d="M5590 4180 l0 -360 40 0 40 0 0 360 0 360 -40 0 -40 0 0 -360z"
+       id="path16" />
+    <path
+       d="M3732 4488 c-18 -18 -16 -24 29 -86 l40 -57 -350 -3 -351 -2 0 -35 0 -35 350 0 351 0 -43 -56 c-33 -44 -40 -59 -31 -72 21 -34 40 -23 102 62 33 46 63 91 66 98 7 16 -121 198 -139 198 -7 0 -17 -5 -24 -12z"
+       id="path18"
+       style="fill:#d62b70;fill-opacity:1" />
+    <path
+       d="M4122 4483 c-21 -18 -21 -18 33 -93 30 -41 55 -78 55 -83 0 -4 -25 -42 -56 -83 -52 -71 -54 -77 -37 -90 10 -7 23 -14 29 -14 6 0 35 34 65 75 l53 75 323 0 323 0 0 35 0 35 -319 0 -320 0 -58 80 c-32 44 -61 80 -64 80 -4 0 -16 -8 -27 -17z"
+       id="path20"
+       style="fill:#d62b70;fill-opacity:1" />
+  </g>
+</svg>
