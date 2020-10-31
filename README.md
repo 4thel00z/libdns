@@ -1,7 +1,7 @@
 # libdns
 
 ![libdns-tests](https://github.com/4thel00z/libdns/workflows/Test/badge.svg)
-![libdns-logo](https://github.com/4thel00z/libdns/raw/assets/logo.png)
+![libdns-logo](https://github.com/4thel00z/libdns/raw/assets/logo.svg)
 
 
 Go DNS Library that exposes various DNS primitives to the user such as:
