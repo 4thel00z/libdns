@@ -1,8 +1,8 @@
-package libdns
+package v1
 
 import (
 	"fmt"
-	"github.com/4thel00z/libdns/utils"
+	"github.com/4thel00z/libdns/v1/pkg/libdns/utils"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

@@ -1,4 +1,4 @@
-package libdns
+package utils
 
 import (
 	"fmt"

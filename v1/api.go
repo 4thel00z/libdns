@@ -1,9 +1,9 @@
-package libdns
+package v1
 
 import (
 	"bufio"
-	"github.com/4thel00z/libdns/dns"
-	"github.com/4thel00z/libdns/utils"
+	"github.com/4thel00z/libdns/v1/pkg/libdns/dns"
+	"github.com/4thel00z/libdns/v1/pkg/libdns/utils"
 )
 
 func SimpleQueryOnce(d utils.DNSServer, domain string, t utils.RecordType, c utils.RecordClass, timeout int64) (dns.Response, error) {

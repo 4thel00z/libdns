@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/4thel00z/libdns/utils"
+	"github.com/4thel00z/libdns/v1/pkg/libdns/utils"
 	"github.com/DanielOaks/go-idn/idna2003"
 	"io"
 	"regexp"
