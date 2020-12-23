@@ -22,12 +22,12 @@ package main
 
 import (
 	"fmt"
-	l "github.com/4thel00z/libdns"
-	u "github.com/4thel00z/libdns/utils"
+	"github.com/4thel00z/libdns/v1"
+	"github.com/4thel00z/libdns/v1/pkg/libdns/utils"
 )
 
 func main() {
-	response, err := l.SimpleQueryOnce(u.CloudflarePrimary, "ransomware.host", u.A, u.InternetClass, 10)
+	response, err := v1.SimpleQueryOnce(utils.CloudflarePrimary, "ransomware.host", utils.A, utils.InternetClass, 10)
 	if err != nil {
 		panic(err)
 	}
